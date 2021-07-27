@@ -1,12 +1,16 @@
-import logo from './logo.svg';
 import './App.scss';
+import React, { Component } from 'react';
+import SearchInput from './components/SearchInput/SearchInput';
 
-function App() {
-  return (
-    <div className="App">
 
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <div className="app">
+        <SearchInput />
+      </div>
+    );
+  }
 }
 
 export default App;

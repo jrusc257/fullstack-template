@@ -1,3 +1,13 @@
 BODY {
-  background-color: green;
+  background-color: var(--body-background);
+  margin: 0;
+}
+
+.app {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: var(--card-background);
+  padding: 50px 30px;
+  box-sizing: border-box;
+  border-radius: 3px;
 }
