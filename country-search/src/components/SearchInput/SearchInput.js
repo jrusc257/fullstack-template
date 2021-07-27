@@ -1,29 +1,46 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useState } from 'react';
 import './SearchInput.scss';
 
-class SearchInput extends React.Component {
+const SearchInput = ({searchCallback}) => {
+    let searchDebounce;
+    const [showClearInput, setShowClearInput] = useState(false)
 
-    render() {
-        let searchDebounce;
-        const searchUpdate = (e) => {
-            if(searchDebounce){
-                clearTimeout(searchDebounce);
+
+    // TODO: this is still sending duplicate requests in some cases
+    const searchUpdate = (e) => {
+        if(e.target.value !== '' && e.target.value !== undefined) {
+            setShowClearInput(true);
+        }
+        if(searchDebounce !== undefined){
+            clearTimeout(searchDebounce);
+            console.log(searchDebounce);
+        }
+        searchDebounce = setTimeout(()=> {
+            if(e.target.value !== '' && e.target.value !== undefined) {
+                searchCallback(e.target.value);
             }
-            searchDebounce = setTimeout(()=> {
-                this.props.searchUpdate(e);
-            }, 800)
-        }
-        return (
-            <div className="search-input-component">
-                <h1>Search by country code or name</h1>
-                <input type="text" onInput={searchUpdate}></input>
-            </div>
-        )
-        SearchInput.propTypes = {
-            searchUpdate: PropTypes.func.isRequired
-        }
+        }, 2000)
     }
+
+    const clearSearch = (e) => {
+        setShowClearInput(false);      
+        if(searchDebounce !== undefined){
+            clearTimeout(searchDebounce);
+        }
+        searchCallback(undefined);
+    }
+
+    return (
+        <div className="search-input-component">
+            <h1>Search by country code or name</h1>
+            <form onReset={clearSearch}>
+                <input type="text" onInput={searchUpdate}></input>
+                { showClearInput === true
+                    ? <span><input id="ResetButton" type="reset" /><label htmlFor="ResetButton">X</label></span>
+                    : <span>?</span>}
+            </form>
+        </div>
+    )
 }
 
 export default SearchInput

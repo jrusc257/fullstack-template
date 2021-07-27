@@ -1,5 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+
 body {
     --body-background: #09203d;
     --card-background: #fff;
     --text: #000;
+    --inverse-text: #fff;
+    --bg-image: 'Earth-light.jpg';
+    --input-element: #ddd;
+    
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+h1 {
+    font-size: 28px;
+}
+
+h2 {
+    font-size: 22px;
+}
+
+input[type=text] {
+    border: none;
+    border-bottom: 2px solid var(--input-element);
+    font-size: 20px;
+
+    &:focus {
+        border-bottom-width: 4px;
+        margin-bottom: -2px;
+        outline: none;
+    }
 }

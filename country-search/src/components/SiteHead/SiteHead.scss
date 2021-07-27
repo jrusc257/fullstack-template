@@ -1,0 +1,11 @@
+.site-head-component {
+    height: 200px;
+    background-image: url(../../assets/Earth-dark.jpg);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    color: var(--inverse-text);
+    padding: 30px;
+    justify-content: center;
+    text-shadow: 2px 2px #000;
+}
