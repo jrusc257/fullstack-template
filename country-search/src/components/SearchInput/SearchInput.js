@@ -15,7 +15,7 @@ class SearchInput extends React.Component {
             }, 800)
         }
         return (
-            <div class="search-input-component">
+            <div className="search-input-component">
                 <h1>Search by country code or name</h1>
                 <input type="text" onInput={searchUpdate}></input>
             </div>
