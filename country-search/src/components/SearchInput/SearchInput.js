@@ -13,7 +13,6 @@ const SearchInput = ({searchCallback}) => {
         }
         if(searchDebounce !== undefined){
             clearTimeout(searchDebounce);
-            console.log(searchDebounce);
         }
         searchDebounce = setTimeout(()=> {
             if(e.target.value !== '' && e.target.value !== undefined) {

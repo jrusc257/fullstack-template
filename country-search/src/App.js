@@ -7,31 +7,30 @@ import axios from 'axios';
 
 
 const App = () => {
-  const [countries, setCountries] = useState([
-    {name: "Taco"},
-    {name: "Burrito"}
-  ])
+  const [countries, setCountries] = useState(undefined)
 
   const searchUpdate = (value) => {
     setCountries(countries => undefined)
     getCountries(value);
   }
 
-  const getCountries = function(str) {
-    //console.log("getting countries", str);
-    // Placeholder for PHP service call
-  }
-
   const logResponse = (result) => {
     console.log(result);
   }
 
-  const search = () => {
-    axios.get(`http://localhost:8765/api`)
-      .then(res => {
-        const countries = res.data;
-        logResponse({ countries });
-      })
+  const getCountries = (searchVal) => {
+    if ( searchVal !== undefined ){
+      const headConfig = {params: {
+        "searchString": searchVal
+      }};
+
+      axios.get(`http://localhost:8765/api`, headConfig)
+        .then(res => {
+          const resp = res.data;
+          logResponse({ resp });
+          setCountries(countries => resp.data)
+        });
+    }
   }
 
   return (
@@ -39,7 +38,6 @@ const App = () => {
       <SiteHead />
       <div className="site-content-wrapper">
         <SearchInput searchCallback={searchUpdate}/>
-        <button onClick={search}>Search</button>
         <SearchResults listResults={countries}/>
       </div>
     </div>
