@@ -27,7 +27,7 @@ const App = () => {
   }
 
   const search = () => {
-    axios.get(`https://jsonplaceholder.typicode.com/users`)
+    axios.get(`http://localhost:8765/api`)
       .then(res => {
         const persons = res.data;
         logResponse({ persons });
