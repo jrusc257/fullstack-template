@@ -29,8 +29,8 @@ const App = () => {
   const search = () => {
     axios.get(`http://localhost:8765/api`)
       .then(res => {
-        const persons = res.data;
-        logResponse({ persons });
+        const countries = res.data;
+        logResponse({ countries });
       })
   }
 
