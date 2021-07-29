@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './SearchInput.scss';
+import magnifyIcon from '../../assets/icons/magnifying-glass.svg';
+import cancelIcon from '../../assets/icons/cancel.svg';
 
 const SearchInput = ({searchCallback}) => {
     let searchDebounce;
@@ -10,6 +12,8 @@ const SearchInput = ({searchCallback}) => {
     const searchUpdate = (e) => {
         if(e.target.value !== '' && e.target.value !== undefined) {
             setShowClearInput(true);
+        } else {
+            setShowClearInput(false);
         }
         if(searchDebounce !== undefined){
             clearTimeout(searchDebounce);
@@ -35,8 +39,8 @@ const SearchInput = ({searchCallback}) => {
             <form onReset={clearSearch}>
                 <input type="text" onInput={searchUpdate}></input>
                 { showClearInput === true
-                    ? <span><input id="ResetButton" type="reset" /><label htmlFor="ResetButton">X</label></span>
-                    : <span>?</span>}
+                    ? <span><input id="ResetButton" type="reset" /><label htmlFor="ResetButton"><img alt="clear input" className="search-input-icon" src={cancelIcon} /></label></span>
+                    : <img alt="search" className="search-input-icon" src={magnifyIcon}/>}
             </form>
         </div>
     )
