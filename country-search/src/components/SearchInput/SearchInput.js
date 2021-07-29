@@ -22,7 +22,7 @@ const SearchInput = ({searchCallback}) => {
             if(e.target.value !== '' && e.target.value !== undefined) {
                 searchCallback(e.target.value);
             }
-        }, 2000)
+        }, 800)
     }
 
     const clearSearch = (e) => {
@@ -37,10 +37,12 @@ const SearchInput = ({searchCallback}) => {
         <div className="search-input-component">
             <h1>Search by country code or name</h1>
             <form onReset={clearSearch}>
-                <input type="text" onInput={searchUpdate}></input>
-                { showClearInput === true
-                    ? <span><input id="ResetButton" type="reset" /><label htmlFor="ResetButton"><img alt="clear input" className="search-input-icon" src={cancelIcon} /></label></span>
-                    : <img alt="search" className="search-input-icon" src={magnifyIcon}/>}
+                <div className="input-wrap">
+                    <input type="text" onInput={searchUpdate}></input>
+                    { showClearInput === true
+                        ? <span className="search-clear-icon"><input id="ResetButton" type="reset" /><label htmlFor="ResetButton"><img alt="clear input" src={cancelIcon} /></label></span>
+                        : <img alt="search" className="search-input-icon" src={magnifyIcon}/>}
+                </div>
             </form>
         </div>
     )

@@ -1,7 +1,7 @@
 
 import './SiteHead.scss';
 
-const SiteHead = ({listResults}) => {
+const SiteHead = () => {
     return (
         <div className="site-head-component">
             <h1>"We are defined not by our borders but by our bonds."</h1>
@@ -10,4 +10,4 @@ const SiteHead = ({listResults}) => {
     )
 }
 
-export default SiteHead
+export default SiteHead;

@@ -1,18 +1,22 @@
 import React from 'react';
+import CountryListing from '../CountryListing/CountryListing';
+import LoadingIndicator from '../LoadingIndicator/LoadingIndicator';
 import './SearchResults.scss';
 
-const SearchResults = ({listResults}) => {
+const SearchResults = ({listResults, loading}) => {
     return (
         <div className="search-results-component">
             <h2>Results</h2>
-            <ul>
-                {listResults !== undefined && listResults.length > 0
-                ? listResults.map((country, key) => {
-                    return <div key={country.name}>{country.name}</div>
-                })
+            { loading === false
+            ? 
+                listResults !== undefined && listResults.length > 0
+                ? 
+                    listResults.map((country, key) => {
+                        return <CountryListing key={country.name} countryDetails={country} />
+                    })
                 : <div>No Results</div>
-                }
-            </ul>
+            : <LoadingIndicator />
+            }
         </div>
     )
 }

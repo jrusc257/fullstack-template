@@ -1,4 +1,8 @@
-.search-input-component { 
+.search-input-component {
+    .input-wrap {
+        display: flex;
+        align-items: center;
+    }
     #ResetButton {
         height: 0;
         width: 0;
@@ -6,7 +10,28 @@
         border: none;
     }
     .search-input-icon {
-        max-width: 20px;
-        max-height: 20px;
+        width: 18px;
+        height: 18px;
+        padding: 6px;
+        border-radius: 3px;
+    }
+    .search-clear-icon {
+        label img {
+            width: 18px;
+            height: 18px;
+            padding: 6px;
+        }
+    }
+    input[type='reset'] {
+        &:hover, &:focus {
+            + label img {
+                background-color: var(--input-hover);
+            }
+        }
+    }
+    input[type='text'] {
+        &:hover, &:focus {
+            background-color: var(--input-hover);
+        }
     }
 }

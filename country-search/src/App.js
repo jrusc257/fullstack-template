@@ -5,20 +5,19 @@ import SearchResults from './components/SearchResults/SearchResults';
 import SiteHead from './components/SiteHead/SiteHead';
 import axios from 'axios';
 
+// Be gentle, this is my first React app ;)
 
 const App = () => {
-  const [countries, setCountries] = useState(undefined)
+  const [countries, setCountries] = useState(undefined);
+  const [loading, setLoading] = useState(false);
 
   const searchUpdate = (value) => {
     setCountries(countries => undefined)
     getCountries(value);
   }
 
-  const logResponse = (result) => {
-    console.log(result);
-  }
-
   const getCountries = (searchVal) => {
+    setLoading(loading => true);
     if ( searchVal !== undefined ){
       const headConfig = {params: {
         "searchString": searchVal
@@ -27,9 +26,11 @@ const App = () => {
       axios.get(`http://localhost:8765/api`, headConfig)
         .then(res => {
           const resp = res.data;
-          logResponse({ resp });
-          setCountries(countries => resp.data)
+          setCountries(countries => resp.data);
+          setLoading(loading => false);
         });
+    } else {
+      setLoading(loading => false);
     }
   }
 
@@ -38,7 +39,7 @@ const App = () => {
       <SiteHead />
       <div className="site-content-wrapper">
         <SearchInput searchCallback={searchUpdate}/>
-        <SearchResults listResults={countries}/>
+        <SearchResults listResults={countries} loading={loading}/>
       </div>
     </div>
   );
