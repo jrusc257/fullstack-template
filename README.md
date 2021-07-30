@@ -7,12 +7,12 @@ This project is a React based app, and requires a few commonly used tools to run
 - PHP (with curl enabled)
 
 ### Installing PHP
-The simplest tutorial I've found is [this guy](https://youtu.be/iW0B9NTId2g), he cuts right to the point on how to install PHP for Windows if you don't have it already.  If you're working from a Mac machine you'll have to find your own installation instructions, but it should be fairly simple.
+The simplest tutorial I've found is [this guy](https://youtu.be/iW0B9NTId2g), he cuts right to the point on how to install PHP for Windows if you don't have it already.  If you're working from a Mac machine you'll have to find your own installation instructions, but it should be fairly simple.  I used PHP v8.0.8 for this exercise.
 
 Most importantly, in the php.ini file make sure that you have the curl extension enabled (search for the line that contains `extension=curl` and remove the semicolon to uncomment that line and enable the extension).
 
 ### Installing NodeJS
-NodeJs can be downloaded [here](https://nodejs.org/en/download/).  Simnply download the installer and execute it to install NodeJs globally.  The installer will enable Node globally.
+NodeJs can be downloaded [here](https://nodejs.org/en/download/).  Simnply download the installer and execute it to install NodeJs globally.  The installer will enable Node globally.  I recommend using v14.17.4, which is the version that they recommend as well.
 
 ## Running the site
 Before running the site, you will need to use node to install the dependent packages required to run this site.  To do so, simply open a terminal window to the root folder of this project and run `npm install` (assuming you have already installed NodeJS).
