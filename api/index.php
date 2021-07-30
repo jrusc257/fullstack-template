@@ -33,16 +33,17 @@
     curl_close($curl2);
     
     $resultByCode = json_decode($resultByCode);
-    // echo json_encode($resultByCode);
     if ( isset($resultByCode -> status)) {
       $resultByCode = null;
     }
  }
 
  // Idea - make this a little more elegant than just returning null when there are no results
- if(isset($resultByCode)){
+ if(isset($resultByCode) && isset($resultByName)){
    array_push($resultByName, $resultByCode);
    echo json_encode(['data' => array_unique($resultByName, SORT_REGULAR)]);
- } else {
+ } else if (isset($resultByName)) {
    echo json_encode(['data' => $resultByName]);
- }
+ } else if (isset($resultByCode)) {
+  echo json_encode(['data' => [$resultByCode]]);
+}
