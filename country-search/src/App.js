@@ -30,7 +30,6 @@ const App = () => {
           const resp = res.data;
           setCountries(countries => resp.data);
           setLoading(loading => false);
-          setLoading(loading => false);
         })
         .catch(err => {
           console.log(err);
@@ -47,6 +46,7 @@ const App = () => {
       <div className="site-content-wrapper">
         <SearchInput searchCallback={searchUpdate}/>
         { error ? <ErrorBanner /> : null }
+        <h2>Results</h2>
         <SearchResults listResults={countries} loading={loading}/>
       </div>
     </div>
