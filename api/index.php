@@ -32,7 +32,7 @@
     $resultByCode = curl_exec($curl2);
     curl_close($curl2);
     
-    $resultByCode = [json_decode($resultByCode)];
+    $resultByCode = json_decode($resultByCode);
     if ( isset($resultByCode -> status)) {
       $resultByCode = null;
     }
@@ -45,5 +45,5 @@
  } else if (isset($resultByName)) {
    echo json_encode(['data' => $resultByName]);
  } else if (isset($resultByCode)) {
-  echo json_encode(['data' => $resultByCode]);
+  echo json_encode(['data' => [$resultByCode]]);
 }
