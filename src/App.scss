@@ -4,6 +4,7 @@ BODY {
   color: var(--text);
 }
 
+// Set some rules for the app container
 .app {
   max-width: 800px;
   margin: 0 auto;
@@ -18,4 +19,32 @@ BODY {
     padding: 50px 30px;
     box-sizing: border-box;
   }
+}
+
+// set up some global rules for common elements
+
+h1 {
+    font-size: 28px;
+}
+
+h2 {
+    font-size: 22px;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+input[type=text] {
+    border: none;
+    font-size: 20px;
+    padding: 8px 5px;
+    background-color: var(--input-background);
+    &:hover, &:focus {
+        background-color: var(--input-background-hover);
+    }
+
+    &:focus {
+        outline: none;
+    }
 }

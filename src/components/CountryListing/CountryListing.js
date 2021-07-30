@@ -3,6 +3,7 @@ import './CountryListing.scss';
 
 const CountryListing = ({countryDetails}) => {
     if (countryDetails){
+        // Renders a set of details about an individual country, nothing fancy
         return (
             <div className="country-wrapper">
                 <div>
