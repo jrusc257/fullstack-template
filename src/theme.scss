@@ -3,13 +3,14 @@
 body {
     --body-background: #09203d;
     --card-background: #fff;
-    --text: #000;
+    --card-background-secondary: #ededf2;
+    --text: #0f0f0f;
+    --text-secondary: #363645;
     --inverse-text: #fff;
-    --input-element: #ccc;
-    --input-hover: #dedede;
+    --input-background: #e9e9f2;    
+    --input-background-hover: #f5f5fa;
     --error-background: #f7d7db;
-    --error-border: #b8123e;    
-
+    --error-border: #b8123e;
 
     font-family: 'Nanum Gothic', sans-serif;
     --bg-image: 'Earth-light.jpg';
@@ -25,12 +26,14 @@ h2 {
 
 input[type=text] {
     border: none;
-    border-bottom: 2px solid var(--input-element);
     font-size: 20px;
+    padding: 8px 5px;
+    background-color: var(--input-background);
+    &:hover, &:focus {
+        background-color: var(--input-background-hover);
+    }
 
     &:focus {
-        border-bottom-width: 4px;
-        margin-bottom: -2px;
         outline: none;
     }
 }

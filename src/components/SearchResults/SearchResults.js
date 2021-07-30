@@ -10,9 +10,7 @@ const SearchResults = ({listResults, loading}) => {
             return (
                 listResults.map((country, key) => {
                     return (
-                        <div>
-                            <CountryListing key={country.name} countryDetails={country} />
-                        </div>
+                        <CountryListing key={country.name} countryDetails={country} />
                     )
                 })
             )

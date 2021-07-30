@@ -20,18 +20,15 @@
             width: 18px;
             height: 18px;
             padding: 6px;
+            border-radius: 50%;
+            margin-left: 5px;
         }
     }
     input[type='reset'] {
         &:hover, &:focus {
             + label img {
-                background-color: var(--input-hover);
+                background-color: var(--input-background-hover);
             }
-        }
-    }
-    input[type='text'] {
-        &:hover, &:focus {
-            background-color: var(--input-hover);
         }
     }
 }

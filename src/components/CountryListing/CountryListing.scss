@@ -1,14 +1,27 @@
 .country-wrapper {
-    display: flex;
     padding: 10px 5px;
-    box-sizing: border-box;
-    vertical-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
+    &:hover {
+        background-color: var(--card-background-secondary);
+    }
+
+    .flag {
+        height: 20px;
+    }
     .name {
         font-size: 18px;
+        display: flex;
+        box-sizing: border-box;
+        align-items: center;
+        .code {
+            font-size: 14px;
+            margin-left: 5px;
+        }
     }
-    .code {
-        font-size: 14px;
-        margin-left: 5px;
+    .capital {
+        color: var(--text-secondary);
     }
 }

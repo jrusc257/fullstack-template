@@ -3,10 +3,13 @@ import './CountryListing.scss';
 
 const CountryListing = ({countryDetails}) => {
     if (countryDetails){
-        console.log("country detail", countryDetails )
         return (
             <div className="country-wrapper">
-                <span className="name">{countryDetails.name}</span><span className="code">({countryDetails.alpha3Code})</span>
+                <div>
+                    <div className="name">{countryDetails.name}<span className="code">({countryDetails.alpha3Code})</span></div>
+                    <div className="capital">{countryDetails.capital}</div>
+                </div>
+                <img className="flag" alt={"FLag of " + countryDetails.name} src={countryDetails.flag} />
             </div>
         )
     } else {
