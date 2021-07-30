@@ -3,16 +3,18 @@ import React, { useState } from 'react';
 import SearchInput from './components/SearchInput/SearchInput';
 import SearchResults from './components/SearchResults/SearchResults';
 import SiteHead from './components/SiteHead/SiteHead';
+import ErrorBanner from './components/ErrorBanner/ErrorBanner';
 import axios from 'axios';
 
 // Be gentle, this is my first React app ;)
 
 const App = () => {
-  const [countries, setCountries] = useState(undefined);
+  const [countries, setCountries] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
   const searchUpdate = (value) => {
-    setCountries(countries => undefined)
+    setCountries(countries => []);
     getCountries(value);
   }
 
@@ -28,6 +30,11 @@ const App = () => {
           const resp = res.data;
           setCountries(countries => resp.data);
           setLoading(loading => false);
+          setLoading(loading => false);
+        })
+        .catch(err => {
+          console.log(err);
+          setError(error => true);
         });
     } else {
       setLoading(loading => false);
@@ -39,6 +46,7 @@ const App = () => {
       <SiteHead />
       <div className="site-content-wrapper">
         <SearchInput searchCallback={searchUpdate}/>
+        { error ? <ErrorBanner /> : null }
         <SearchResults listResults={countries} loading={loading}/>
       </div>
     </div>

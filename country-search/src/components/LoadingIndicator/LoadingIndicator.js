@@ -3,7 +3,7 @@ import './LoadingIndicator.scss';
 
 const LoadingIndicator = () => {
     return (
-        <div className="loading-wrapper">Loading</div>
+        <div className="loading-indicator">Loading</div>
     )
 }
 
