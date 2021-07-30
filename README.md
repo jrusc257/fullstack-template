@@ -15,7 +15,7 @@ Most importantly, in the php.ini file make sure that you have the curl extension
 NodeJs can be downloaded [here](https://nodejs.org/en/download/).  Simnply download the installer and execute it to install NodeJs globally.  The installer will enable Node globally.
 
 ## Running the site
-To run the site you will need to open two terminal windows to run a mini PHP server as well as the Node server (in a real environment you would configure these on the same server assigned to different ports, but that was more setup that I wanted to put anyone through).
+To run the site you will need to open two terminal windows in the project root to run a mini PHP server as well as the Node server (in a real environment you would configure these on the same server assigned to different ports, but that was more setup that I wanted to put anyone through).
 
 There are two NPM commands you can run to quickly get the site running
 - `npm run start-api` (starts the PHP endpoint)
