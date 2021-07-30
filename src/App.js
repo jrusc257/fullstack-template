@@ -35,6 +35,7 @@ const App = () => {
           // set loading to false again.
           const resp = res.data;
           setCountries(countries => resp.data);
+          setError(error => false);
           setLoading(loading => false);
         })
         .catch(err => {
