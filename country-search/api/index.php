@@ -12,6 +12,7 @@
  curl_setopt_array($curl, [
     CURLOPT_URL => 'https://restcountries.eu/rest/v2/name/' . $searchString,
     CURLOPT_SSL_VERIFYPEER => false,
+    CURLOPT_HEADER => true,
     CURLOPT_RETURNTRANSFER => 1
  ]);
  $resultByName = curl_exec($curl);
@@ -21,16 +22,18 @@
     curl_setopt_array($curl2, [
       CURLOPT_URL => 'https://restcountries.eu/rest/v2/alpha/' . $searchString,
       CURLOPT_SSL_VERIFYPEER => false,
+      CURLOPT_HEADER => true,
       CURLOPT_RETURNTRANSFER => 1
     ]);
     $resultByCode = curl_exec($curl2);
     curl_close($curl2);
-    $resultByCode = ['countryByCode' => json_decode($resultByCode)];
+    $resultByCode = json_decode($resultByCode);
  }
  curl_close($curl);
  
- $resultByName = ['countryByName' => json_decode($resultByName)]; 
+ $resultByName = json_decode($resultByName); 
 
+ // Idea - make this a little more elegant than just returning null when there are no results
  if(isset($resultByCode)){
    echo json_encode(['data' => array_merge((array) $resultByCode, (array) $resultByName)]);
  } else {
