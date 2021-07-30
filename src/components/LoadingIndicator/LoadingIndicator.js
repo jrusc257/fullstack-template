@@ -5,7 +5,7 @@ const LoadingIndicator = () => {
     return (
         <div className="loading-indicator">
             <div className="animation"></div>
-            <div>Loading...</div>
+            <div className="text">Loading...</div>
         </div>
     )
 }

@@ -1,3 +1,7 @@
+HTML {
+  font-size: 62.5%; // Assuming a default 16px font size (Chrome default) sets a base rem unit to 10px
+}
+
 BODY {
   background-color: var(--body-background);
   margin: 0;
@@ -6,9 +10,9 @@ BODY {
 
 // Set some rules for the app container
 .app {
-  max-width: 800px;
+  max-width: 80rem;
   margin: 0 auto;
-  margin-top: 30px;
+  margin-top: 3rem;
   background-color: var(--card-background);
   border-radius: 3px;
   overflow: hidden;
@@ -16,29 +20,28 @@ BODY {
   box-shadow: 5px 5px 15px -2px rgba(0,0,0,0.31);
 
   .site-content-wrapper {
-    padding: 50px 30px;
+    padding: 5rem 3rem;
     box-sizing: border-box;
   }
 }
 
 // set up some global rules for common elements
-
 h1 {
-    font-size: 28px;
+    font-size: 2.8rem;
 }
 
 h2 {
-    font-size: 22px;
+    font-size: 2.2rem;
 }
 
 h3 {
-    font-size: 18px;
+    font-size: 1.8rem;
 }
 
 input[type=text] {
     border: none;
-    font-size: 20px;
-    padding: 8px 5px;
+    font-size: 2rem;
+    padding: 0.8rem 0.5rem;
     background-color: var(--input-background);
     &:hover, &:focus {
         background-color: var(--input-background-hover);

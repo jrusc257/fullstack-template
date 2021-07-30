@@ -1,5 +1,5 @@
 .country-wrapper {
-    padding: 10px 5px;
+    padding: 1rem 0.5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -9,19 +9,20 @@
     }
 
     .flag {
-        height: 20px;
+        height: 2rem;
     }
     .name {
-        font-size: 18px;
+        font-size: 1.8rem;
         display: flex;
         box-sizing: border-box;
         align-items: center;
         .code {
-            font-size: 14px;
-            margin-left: 5px;
+            font-size: 1.4rem;
+            margin-left: 0.5rem;
         }
     }
     .capital {
+        font-size: 1.4rem;
         color: var(--text-secondary);
     }
 }
