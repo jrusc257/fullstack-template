@@ -47,13 +47,22 @@
     }
  }
 
+ function cmp($a, $b) {
+  // return strcmp($a->population, $b->population);
+	if($a->population == $b->population){ return 0 ; }
+	return ($a->population < $b->population) ? 1 : -1;
+}
+
  // Idea - make this a little more elegant than just returning null when there are no results
  // Return all results with a little bit of sanitization
  if(isset($resultByCode) && isset($resultByName)){
    // Merge arrays and filter duplicates
    array_push($resultByName, $resultByCode);
-   echo json_encode(['data' => array_unique($resultByName, SORT_REGULAR)]);
+   $resultByName = array_unique($resultByName, SORT_REGULAR);
+   usort($resultByName, 'cmp');
+   echo json_encode(['data' => $resultByName]);
  } else if (isset($resultByName)) {
+  usort($resultByName, 'cmp');
    echo json_encode(['data' => $resultByName]);
  } else if (isset($resultByCode)) {
   echo json_encode(['data' => [$resultByCode]]);

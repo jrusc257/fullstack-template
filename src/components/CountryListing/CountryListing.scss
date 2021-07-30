@@ -3,13 +3,15 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    font-size: 1.4rem;
 
     &:hover {
         background-color: var(--card-background-secondary);
     }
-
-    .flag {
-        height: 2rem;
+    .language-list {
+        list-style: none;
+        padding-left: 10px;
+        margin: 0.5rem 0;
     }
     .name {
         font-size: 1.8rem;
@@ -21,8 +23,9 @@
             margin-left: 0.5rem;
         }
     }
-    .capital {
-        font-size: 1.4rem;
-        color: var(--text-secondary);
+
+    .flag {
+        height: 2rem;
     }
+
 }

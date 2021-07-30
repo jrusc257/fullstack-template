@@ -1,0 +1,16 @@
+.country-summary-wrapper {
+    .tag-wrapper {
+        display: flex;
+        column-gap: 10px;
+        row-gap: 10px;
+        flex-wrap: wrap;
+        .region-tag {
+            padding: 5px 12px;
+            font-size: 1.2rem;
+            display: inline-block;
+            background-color: var(--card-background-secondary);
+            box-sizing: border-box;
+            border-radius: 10px
+        }
+    }
+}
