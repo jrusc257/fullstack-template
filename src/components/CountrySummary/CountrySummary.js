@@ -3,16 +3,20 @@ import './CountrySummary.scss';
 
 const CountrySummary = ({countryList}) => {
     if (countryList){
+        // Set up some array containers to grab all the region names and also hold
         let regions = [];
         let subRegions = [];
         let filteredRegions = [];
         let filteredSubRegions = [];
 
+        // First condense all the countries down to their region name
         for (const i in countryList) {
             regions.push(countryList[i].region)
             subRegions.push(countryList[i].subregion)
         }
 
+
+        // a generic function to filter either region names or sub region names and attach an associated count in an object
         function filterAndCount(list, target){
             for (const i in list) {
                 if (target === undefined || !target.find(target => target.name === list[i])) {
@@ -23,6 +27,7 @@ const CountrySummary = ({countryList}) => {
             }
         }
 
+        // Run the filter on both region and subregion arrays
         filterAndCount(regions, filteredRegions);
         filterAndCount(subRegions, filteredSubRegions);
 
