@@ -1,0 +1,40 @@
+.loading-indicator {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    margin-top: 40px;
+
+    .animation {
+        &:before, &:after {
+            content: '';
+            display: block;
+            width: 0px;
+            background-color: var(--loading-spinner);
+            border-radius: 50%;
+            animation-duration: 2s;
+            animation-name: pulse;
+            animation-iteration-count: infinite;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            margin-top: -20px;
+        }
+        &:after {
+            animation-delay: 400ms;
+        }
+    }
+}
+
+@keyframes pulse {
+    from {
+        width: 0px;
+        height: 0px;
+        opacity: 1;
+    }
+    to {
+        width: 40px;
+        height: 40px;
+        opacity: 0;
+    }
+}
