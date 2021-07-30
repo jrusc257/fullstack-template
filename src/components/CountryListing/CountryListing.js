@@ -8,7 +8,9 @@ const CountryListing = ({countryDetails}) => {
             <div className="country-wrapper">
                 <div>
                     <div className="name"><strong>{countryDetails.name}</strong><span className="code">({countryDetails.alpha2Code} / {countryDetails.alpha3Code})</span></div>
-                    <div><strong>Region: </strong>{countryDetails.region} <strong>Sub-region: </strong> {countryDetails.subregion}</div>
+                    <div>
+                        <span className="region-name"><strong>Region: </strong>{countryDetails.region}</span>&nbsp;
+                        <span className="region-name"><strong>Sub-region: </strong> {countryDetails.subregion}</span></div>
                     <div><strong>Pop: </strong>{countryDetails.population.toLocaleString()}</div>
                     <div><strong>Languages:</strong></div>
                     <ul className="language-list">

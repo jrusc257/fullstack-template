@@ -8,11 +8,6 @@
     &:hover {
         background-color: var(--card-background-secondary);
     }
-    .language-list {
-        list-style: none;
-        padding-left: 10px;
-        margin: 0.5rem 0;
-    }
     .name {
         font-size: 1.8rem;
         display: flex;
@@ -22,6 +17,14 @@
             font-size: 1.4rem;
             margin-left: 0.5rem;
         }
+    }
+    .region-name {
+        display: inline-block;
+    }
+    .language-list {
+        list-style: none;
+        padding-left: 10px;
+        margin: 0.5rem 0;
     }
 
     .flag {
