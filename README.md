@@ -1,24 +1,22 @@
 # Fullstack evaluation template
 
 ## How to use
-The files included in this repository are here to get you started by giving
-you an idea on how you might start the project.
+This project is a React based app, and requires a few commonly used tools to run locally
 
-To start the server open a terminal window on unix/linux based systems and change
-directory to the project root. Then execute this command:
+- NodeJS
+- PHP (with curl enabled)
 
-```
-  ./server
-```
+### Installing PHP
+The simplest tutorial I've found is [this guy](https://youtu.be/iW0B9NTId2g), he cuts right to the point on how to install PHP for Windows if you don't have it already.  If you're working from a Mac machine you'll have to find your own installation instructions, but it should be fairly simple.
 
-The command assumes you have a PHP binary in your system path. If you don't you
-will get an error and the server will not start.
+Most importantly, in the php.ini file make sure that you have the curl extension enabled (search for the line that contains `extension=curl` and remove the semicolon to uncomment that line and enable the extension).
 
-After starting the server go to:
+### Installing NodeJS
+NodeJs can be downloaded [here](https://nodejs.org/en/download/).  Simnply download the installer and execute it to install NodeJs globally
 
-```
-http://localhost:8765/index.html  
-```
+## Running the site
+To run the site you will need to open two terminal windows to run a mini PHP server as well as the Node server (in a real environment you would configure these on the same server assigned to different ports, but that was more setup that I wanted to put anyone through).
 
-If you setup the http server differently, please provide direction on how to start it
-in your submitted project's readme file.
+There are two NPM commands you can run to quickly get the site running
+- `npm run start-api` (starts the PHP endpoint)
+- `npm start` (starts the UI project)
