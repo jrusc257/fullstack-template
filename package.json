@@ -2,6 +2,9 @@
   "name": "country-search",
   "version": "0.1.0",
   "private": true,
+  "config": {
+    "apiPath":"http://localhost:8765/api"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
