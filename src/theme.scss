@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
 
+// Set global theme variables to be used throughout the site
 body {
     --body-background: #09203d;
     --card-background: #fff;
@@ -15,26 +16,4 @@ body {
 
     font-family: 'Nanum Gothic', sans-serif;
     --bg-image: 'Earth-light.jpg';
-}
-
-h1 {
-    font-size: 28px;
-}
-
-h2 {
-    font-size: 22px;
-}
-
-input[type=text] {
-    border: none;
-    font-size: 20px;
-    padding: 8px 5px;
-    background-color: var(--input-background);
-    &:hover, &:focus {
-        background-color: var(--input-background-hover);
-    }
-
-    &:focus {
-        outline: none;
-    }
 }
